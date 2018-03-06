@@ -1,8 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
 import registerServiceWorker from './registerServiceWorker';
+import TicTacToe from './TicTacToe';
+import rootReducer from './reducers'
+import './index.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+let store = createStore(rootReducer);
+
+ReactDOM.render(
+  <Provider store={store}>
+    <TicTacToe />
+  </Provider>,
+  document.getElementById('root')
+);
 registerServiceWorker();
