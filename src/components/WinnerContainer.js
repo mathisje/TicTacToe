@@ -1,10 +1,10 @@
 import { connect } from 'react-redux'
 import { placeMark } from '../actions'
-import BoardSquare from './BoardSquare'
+import Winner from './Winner'
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
-    square: state.board[ownProps.row][ownProps.column]
+    winner: state.winner
   }
 };
 
@@ -16,9 +16,9 @@ const mapDispatchToProps = (dispatch) => {
   }
 };
 
-const SquareContainer = connect(
+const WinnerContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(BoardSquare);
+)(Winner);
 
-export default SquareContainer;
+export default WinnerContainer;

@@ -1,8 +1,9 @@
 
-export const placeMark = (squareId) => {
+export const placeMark = (square) => {
+  console.log(square);
   return {
     type: 'PLACE_MARK',
-    squareId
+    square
   }
 };
 

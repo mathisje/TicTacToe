@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import BoardContainer from './components/BoardContainer'
 import ResetContainer from './components/ResetContainer'
+import WinnerContainer from './components/WinnerContainer'
 import logo from './logo.svg';
 import './App.css';
 
@@ -16,6 +17,7 @@ class App extends Component {
         <div className='flex'>
           <BoardContainer/>
         </div>
+        <WinnerContainer/>
       </div>
     );
   }

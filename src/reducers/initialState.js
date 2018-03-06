@@ -62,6 +62,7 @@ export const initialState = {
       }
     ]
   ],
-  turn: 'X',
+  player: 'X',
+  turn: 0,
   winner: null
 };
