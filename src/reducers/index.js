@@ -2,7 +2,6 @@ import { initialState } from './initialState'
 
 const rootReducer = (state = { ...initialState }, action) => {
   if (action.type === 'PLACE_MARK') {
-    console.log('PLACE_MARK' + action.square.id);
     if (state.winner !== null || action.square.mark !== '') {
       return state;
     }
@@ -13,7 +12,6 @@ const rootReducer = (state = { ...initialState }, action) => {
     return { ...state, board: newBoard, player: newPlayer, winner: newWinner, turn: state.turn + 1 };
   }
   else if (action.type === 'RESET_GAME') {
-    console.log('RESET_GAME');
     return { ...initialState };
   }
   else {
@@ -22,7 +20,6 @@ const rootReducer = (state = { ...initialState }, action) => {
 };
 
 const evaluateBoard = (board, square, mark) => {
-  console.log(square);
   let newBoard = board.slice();
   let newRow = newBoard[square.row].slice();
   let newSquare = { ...newRow[square.column] };
@@ -42,7 +39,6 @@ const evaluatePlayer = (player) => {
 };
 
 const evaluateWinner = (board, mark, turn) => {
-  console.log(turn);
   if (
     (board[0][0].mark !== '' && board[0][0].mark === board[0][1].mark && board[0][1].mark === board[0][2].mark) ||
     (board[1][0].mark !== '' && board[1][0].mark === board[1][1].mark && board[1][1].mark === board[1][2].mark) ||
@@ -53,7 +49,6 @@ const evaluateWinner = (board, mark, turn) => {
     (board[0][0].mark !== '' && board[0][0].mark === board[1][1].mark && board[1][1].mark === board[2][2].mark) ||
     (board[2][0].mark !== '' && board[2][0].mark === board[1][1].mark && board[1][1].mark === board[0][2].mark)
   ) {
-    console.log(mark + ' wins');
     return mark;
   }
   else if (turn === 8) {

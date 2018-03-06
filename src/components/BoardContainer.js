@@ -1,5 +1,4 @@
 import { connect } from 'react-redux'
-import { placeMark } from '../actions'
 import Board from './Board'
 
 const mapStateToProps = (state) => {
@@ -8,17 +7,8 @@ const mapStateToProps = (state) => {
   }
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    placeMarkHandler: (square) => {
-      dispatch(placeMark(square))
-    }
-  }
-};
-
 const BoardContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(Board);
 
 export default BoardContainer;

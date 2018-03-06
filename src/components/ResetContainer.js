@@ -4,7 +4,7 @@ import ResetButton from './ResetButton'
 
 const mapStateToProps = (state) => {
   return {
-    state: state
+    reset: null
   }
 };
 
